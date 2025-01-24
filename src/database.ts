@@ -6,6 +6,7 @@ export const dataSource = new DataSource({
   database: ':memory:',  
   synchronize: true,      
   entities: [Producer],   
+  dropSchema: process.env.NODE_ENV === "test",
 });
 
 export const createDatabaseConnection = async () => {

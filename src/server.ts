@@ -8,11 +8,14 @@ const app = express();
 const startServer = async () => {
     try {
         await createDatabaseConnection();
-        await importProducers();
+
+        if (process.env.NODE_ENV != "test") await importProducers();
         
         app.use(express.json());
-        app.use('/',routes);      
-        app.listen(5000, () => console.log(`Server listening on port 5000`));
+        app.use('/',routes);     
+        app.listen(5000, () => {
+            console.log(`Server listening on port 5000`)
+        });
 
     } catch (error) {
         console.error('Erro ao iniciar o servidor', error);
@@ -20,3 +23,7 @@ const startServer = async () => {
 };
 
 startServer();
+
+export {
+    app
+}
