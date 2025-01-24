@@ -9,11 +9,14 @@
     "@types/jest": "^29.5.14",
     "@types/nodemon": "^1.19.6",
     "nodemon": "^3.1.9",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
   "dependencies": {
     "@types/sqlite3": "^3.1.11",
+    "@types/supertest": "^6.0.2",
     "csv-reader": "^1.0.12",
     "csvtojson": "^2.0.10",
     "express": "^4.21.2",
@@ -23,6 +26,7 @@
     "yup": "^1.6.1"
   },
   "scripts": {
-    "start:dev": "nodemon --config nodemon.json"
+    "start:dev": "nodemon --config nodemon.json",
+    "test": "jest --detectOpenHandles"
   }
 }
