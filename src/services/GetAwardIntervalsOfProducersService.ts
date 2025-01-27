@@ -45,8 +45,8 @@ export default class GetAwardIntervalsOfProducersService {
         intervals.sort((a, b) => a.interval - b.interval);
 
         // Getting the two smallest intervals (min) and two largest intervals (max)
-        const minIntervals = intervals.slice(0, 2); // Getting the two smallest intervals
-        const maxIntervals = intervals.slice(-2).sort((a, b) => b.interval - a.interval); // Getting the two largest intervals
+        const minIntervals = intervals.slice(0, 1); // Getting the two smallest intervals
+        const maxIntervals = intervals.slice(-1).sort((a, b) => b.interval - a.interval); // Getting the two largest intervals
 
         return {
             min: minIntervals,  // Returning the two smallest intervals
