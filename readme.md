@@ -12,11 +12,7 @@ Place a CSV file in the `data` directory named `movielist.csv`. This file must c
 - **producers**
 - **winner** (only "yes", "no", or empty)
 
-All columns mentioned above are mandatory.
-
-There are two example files inside the `data` folder:
-* ``data/movielist-example1.csv``
-* ``data/movielist-example2.csv``
+There is an example file ``./data/movielist.csv.``
 
 ## Project Requirements
 
