@@ -24,8 +24,21 @@ export default class ImportProducerService {
             invalidLines: 0,
             errors: []
         }
-    
-        for(const row of rows){           
+
+        const individualProducer: any[] = [];
+
+        for(const row of rows){
+            const producersNames = row.producers.split(',')
+                .flatMap((producer: string) => producer.split(' and '))
+                .map((producer: string) => producer.trim())
+                .filter((producer: string) => producer);
+
+            for(const producerName of producersNames){
+                individualProducer.push({...row, producers: producerName.trim()});
+            }
+        }
+
+        for(const row of individualProducer){           
             try {
                 const data = await this.validateRow(row);
                 await this.producerRepository.save(data);
