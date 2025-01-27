@@ -1,5 +1,1 @@
 node_modules
-data/*
-!data/.gitkeep
-!data/movielist-example1.csv
-!data/movielist-example2.csv
